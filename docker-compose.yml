@@ -1,0 +1,12 @@
+services:
+  server:
+    build: { context: ., dockerfile: Dockerfile.server }
+    env_file: .env          # DB credentials stay on the server only
+    ports: ["8000:8000"]
+  client:
+    build: { context: ., dockerfile: Dockerfile.client }
+    environment:
+      MCP_SERVER_URL: http://server:8000/mcp
+    env_file: .env          # needed for GROQ_API_KEY / GROQ_MODEL
+    ports: ["8501:8501"]
+    depends_on: [server]

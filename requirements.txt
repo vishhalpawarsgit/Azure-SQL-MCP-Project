@@ -1,0 +1,6 @@
+mcp>=1.2.0,<2      # Official MCP Python SDK (FastMCP API; 2.x renamed it)
+pyodbc>=5.0.0       # SQL Server / Azure SQL driver (needs the Microsoft ODBC Driver, see README)
+python-dotenv>=1.0.0
+streamlit>=1.35.0
+pandas>=2.0.0
+groq>=0.9.0         # Groq API client (the LLM that decides which tools to call)
